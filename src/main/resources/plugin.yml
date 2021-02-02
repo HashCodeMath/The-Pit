@@ -1,0 +1,51 @@
+name: ThePit
+version: 1.1
+main: nedev.hogoshi.ThePit
+authors: [Hogoshi]
+description: ThePit plugin minecraft coded by Hogoshi
+commands:
+  setgold:
+    aliases: [sg, sc, setcoins]
+    description: nune
+  setlevel:
+    aliases: [sl]
+    description: xz
+  setexp:
+    aliases: [se]
+    description: lol
+  addgold:
+    aliases: [ag, ac, addcoins]
+    description: gsfdtrf
+  addlevel:
+    aliases: [al]
+    description: rdgetrtdyeg
+  addexp:
+    aliases: [ae]
+    description: trytyrh
+  r:
+    aliases: [relod]
+    description: trytyrh
+  thepit:
+    aliases: [pit, thep, tpit, пит, зепит]
+    description: trytyrh
+  gamemode:
+    aliases: [gm]
+    description: gamemode cmd
+  gold:
+    aliases: [balance, g, баланс, coins, b]
+    description: unknownn
+  level:
+    aliases: [l, lvl, уровень]
+    description: see the level
+  setprestige:
+    aliases: [p, sp]
+    description: set the prestige
+  addprestige:
+    aliases: [ap]
+    description: add the prestige
+  do:
+    aliases: [d]
+    description: info about player
+  info:
+    aliases: [i]
+    description: full info
