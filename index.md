@@ -1,2 +1,3 @@
-
-Test
+---
+permalink: /thepit.html
+---
