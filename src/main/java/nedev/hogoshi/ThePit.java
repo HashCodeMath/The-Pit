@@ -157,7 +157,7 @@ public final class ThePit extends JavaPlugin {
 
     public void registerEvents() {
         if (getConfig().getInt("Language") == 1) {
-            cs.sendMessage("§fThe Pit §e> §aЗагрузка Эвентов...");
+            cs.sendMessage("§fThe Pit §e> §aЗагрузка Эвентов..dd.");
         } else if (getConfig().getInt("Language") == 2) {
             cs.sendMessage("§fThe Pit §e> §aLoading Events...");
         }
