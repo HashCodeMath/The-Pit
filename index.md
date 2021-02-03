@@ -1,1 +1,1 @@
-permalink: /main.html
+permalink: /404.md
