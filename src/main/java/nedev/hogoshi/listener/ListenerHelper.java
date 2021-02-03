@@ -14,6 +14,7 @@ import org.bukkit.inventory.ItemStack;
 
 import java.util.HashMap;
 import java.util.Map;
+import java.util.Random;
 
 public class ListenerHelper {
 
@@ -400,6 +401,12 @@ public class ListenerHelper {
         } else if (loadedUser.getLevel() >= 140) {
             ListenerHelper.coloredlevel.put(loadedUser.getLevel(), "§0§l");
         }
+    }
+
+    public static int getRandomNumber(int min, int max) {
+        Random r = new Random();
+        int randomNumber = r.nextInt(max - min) + min;
+        return randomNumber;
     }
 
 }

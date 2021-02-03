@@ -4,15 +4,21 @@ import lombok.val;
 import nedev.hogoshi.ThePit;
 import nedev.hogoshi.mysql.LoadedUser;
 import org.bukkit.Bukkit;
+import org.bukkit.Location;
 import org.bukkit.Material;
+import org.bukkit.entity.Item;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.entity.PlayerDeathEvent;
+import org.bukkit.inventory.Inventory;
 import org.bukkit.inventory.ItemFlag;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.meta.ItemMeta;
 import org.bukkit.inventory.meta.SkullMeta;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class PDeathEvent implements Listener {
 
@@ -22,7 +28,31 @@ public class PDeathEvent implements Listener {
 
         e.setDeathMessage("");
         e.setKeepInventory(false);
-        e.getDrops().clear();
+
+        List<Integer> fullSlots = new ArrayList();
+        fullSlots.clear();
+        Inventory inv = p.getInventory();
+
+        int slot;
+        for(slot = 0; slot <= inv.getSize(); ++slot) {
+            if (inv.getItem(slot) != null) {
+                fullSlots.add(slot);
+            }
+        }
+
+        if(fullSlots.size() != 0) {
+            ItemStack i = new ItemStack(inv.getItem(fullSlots.get(slot)));
+            Location l = p.getLocation();
+            if (i.getType() == Material.IRON_CHESTPLATE && !p.getInventory().contains(new ItemStack(Material.CHAINMAIL_CHESTPLATE)) && !p.getInventory().contains(new ItemStack(Material.DIAMOND_CHESTPLATE))) {
+                p.getWorld().dropItemNaturally(l, new ItemStack(Material.IRON_CHESTPLATE));
+            }
+            if (i.getType() == Material.IRON_CHESTPLATE && p.getInventory().contains(new ItemStack(Material.CHAINMAIL_CHESTPLATE)) && !p.getInventory().contains(new ItemStack(Material.DIAMOND_CHESTPLATE))) {
+                p.getWorld().dropItemNaturally(l, new ItemStack(Material.IRON_CHESTPLATE));
+            }
+            if (i.getType() == Material.IRON_CHESTPLATE && p.getInventory().contains(new ItemStack(Material.CHAINMAIL_CHESTPLATE)) && p.getInventory().contains(new ItemStack(Material.DIAMOND_CHESTPLATE))) {
+                p.getWorld().dropItemNaturally(l, new ItemStack(Material.DIAMOND_CHESTPLATE));
+            }
+        }
 
         if (p.getKiller() instanceof Player) {
             val loadedUser = LoadedUser.USER_CACHE.getUnchecked(e.getEntity().getKiller().getUniqueId());
@@ -77,6 +107,8 @@ public class PDeathEvent implements Listener {
 
             loadedUser.addKills(1);
             loadedUserr.addDeaths(1);
+
+
 
         }
 

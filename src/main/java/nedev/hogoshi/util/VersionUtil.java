@@ -14,7 +14,7 @@ public class VersionUtil {
         try {
             String c = Randomizer.generateRandomKey(5000);
 
-            HttpURLConnection connection = (HttpURLConnection) new URL("https://api.spigotmc.org/legacy/update.php?key=" + c + "&resource=88569").openConnection();
+            HttpURLConnection connection = (HttpURLConnection) new URL("https://api.spigotmc.org/legacy/update.php?key=" + c + "&resource=soon").openConnection();
             connection.setDoOutput(true);
             String version = new BufferedReader(new InputStreamReader(connection.getInputStream())).readLine();
             if (version.equals(Settings.versionstring)) {
