@@ -19,6 +19,7 @@ import java.net.URL;
 public final class ThePit extends JavaPlugin {
 
     public static FileUtil messages = new FileUtil("messages", "plugins/ThePit/");
+    public static FileUtil items = new FileUtil("items", "plugins/ThePit/menus/");
 
     CommandSender cs = Bukkit.getServer().getConsoleSender();
     public MySQL SQL = new MySQL();
@@ -121,13 +122,29 @@ public final class ThePit extends JavaPlugin {
             } else {
                 cs.sendMessage("§fThe Pit §e> §aCreating messages...");
             }
+
+            if(!items.contains("RU.ItemsShop.DiamondSword")) {
+                items.set("RU.ItemsShop.DiamondSword.Name", "&cАлмазный меч");
+                items.setStrings("RU.ItemsShop.DiamondSword.Lores", "&e", "&fСтоимость: &c150 &fзолота", "&7", "&aНажмите, чтобы купить!");
+            }
+            if(!items.contains("RU.ItemsShop.DiamondChestplate")) {
+                items.set("RU.ItemsShop.DiamondChestplate.Name", "&cАлмазный нагрудник");
+                items.setStrings("RU.ItemsShop.DiamondChestplate.Lores", "&e", "&fСтоимость: &c250 &fзолота", "&7", "&aНажмите, чтобы купить!");
+            }
+            if(!items.contains("RU.ItemsShop.DiamondBoots")) {
+                items.set("RU.ItemsShop.DiamondBoots.Name", "&cАлмазные ботинки");
+                items.setStrings("RU.ItemsShop.DiamondBoots.Lores", "&e", "&fСтоимость: &c100 &fзолота", "&7", "&aНажмите, чтобы купить!");
+            }
         } catch (Exception e) {
             e.printStackTrace();
         }
 
         VersionUtil.versionChecker();
-
-        SQL.connect();
+        try {
+            SQL.connect();
+        } catch (Exception e) {
+            cs.sendMessage("§fThe Pit §e> §cDatabase not connected!");
+        }
 
         registerCommands();
         registerEvents();
@@ -156,12 +173,6 @@ public final class ThePit extends JavaPlugin {
     }
 
     public void registerEvents() {
-        if (getConfig().getInt("Language") == 1) {
-            cs.sendMessage("§fThe Pit §e> §aЗагрузка Эвентов...");
-        } else if (getConfig().getInt("Language") == 2) {
-            cs.sendMessage("§fThe Pit §e> §aLoading Events...");
-        }
-
         getServer().getPluginManager().registerEvents(new APChatEvent(), this);
         getServer().getPluginManager().registerEvents(new EDamageEvent(), this);
         getServer().getPluginManager().registerEvents(new FChangeEvent(), this);
@@ -175,7 +186,7 @@ public final class ThePit extends JavaPlugin {
     public void onDisable() {
         Saver.saveAll();
         if (getConfig().getInt("Language") == 1) {
-            cs.sendMessage("§fThe Pit §e> §cПлагин был успешно выключенff!");
+            cs.sendMessage("§fThe Pit §e> §cПлагин был успешно выключен!");
         } else {
             cs.sendMessage("§fThe Pit §e> §cPlugin was successfully disabled!");
         }

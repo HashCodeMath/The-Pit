@@ -5,6 +5,7 @@ import fr.minuskube.inv.SmartInventory;
 import fr.minuskube.inv.content.InventoryContents;
 import fr.minuskube.inv.content.InventoryProvider;
 import lombok.val;
+import nedev.hogoshi.ThePit;
 import nedev.hogoshi.listener.ListenerHelper;
 import nedev.hogoshi.mysql.LoadedUser;
 import org.bukkit.Material;
@@ -32,14 +33,10 @@ public class ItemShopRU implements InventoryProvider {
         ItemStack dsword = new ItemStack(Material.DIAMOND_SWORD);
         ItemMeta dsmeta = dsword.getItemMeta();
 
-        List<String> dslores = new ArrayList<>();
+        List<String> dslores = ThePit.items.getStringList("RU.ItemsShop.DiamondSword.Lores");
 
-        dslores.add("§e");
-        dslores.add("§fСтоимость: §c150 §fзолота");
-        dslores.add("§7");
-        dslores.add("§aНажмите, чтобы купить!");
+        dsmeta.setDisplayName(ThePit.items.getString("RU.ItemsShop.DiamondSword.Name"));
 
-        dsmeta.setDisplayName("§cАлмазный меч");
         dsmeta.setLore(dslores);
 
         dsmeta.addItemFlags(ItemFlag.HIDE_ATTRIBUTES);
@@ -75,14 +72,9 @@ public class ItemShopRU implements InventoryProvider {
         ItemStack dchest = new ItemStack(Material.DIAMOND_CHESTPLATE);
         ItemMeta dcmeta = dchest.getItemMeta();
 
-        List<String> dclores = new ArrayList<>();
+        List<String> dclores = ThePit.items.getStringList("RU.ItemsShop.DiamondChestplate.Lores");
 
-        dclores.add("§e");
-        dclores.add("§fСтоимость: §c250 §fзолота");
-        dclores.add("§7");
-        dclores.add("§aНажмите, чтобы купить!");
-
-        dcmeta.setDisplayName("§cАлмазный нагрудник");
+        dcmeta.setDisplayName(ThePit.items.getString("RU.ItemsShop.DiamondChestplate.Name"));
         dcmeta.setLore(dclores);
 
         dcmeta.addItemFlags(ItemFlag.HIDE_ATTRIBUTES);
@@ -122,14 +114,9 @@ public class ItemShopRU implements InventoryProvider {
         ItemStack dboots = new ItemStack(Material.DIAMOND_BOOTS);
         ItemMeta dbmeta = dchest.getItemMeta();
 
-        List<String> dblores = new ArrayList<>();
+        List<String> dblores = ThePit.items.getStringList("RU.ItemsShop.DiamondBoots.Lores");
 
-        dblores.add("§e");
-        dblores.add("§fСтоимость: §c100 §fзолота");
-        dblores.add("§7");
-        dblores.add("§aНажмите, чтобы купить!");
-
-        dbmeta.setDisplayName("§cАлмазные ботинки");
+        dbmeta.setDisplayName(ThePit.items.getString("RU.ItemsShop.DiamondBoots.Name"));
         dbmeta.setLore(dblores);
 
         dbmeta.addItemFlags(ItemFlag.HIDE_ATTRIBUTES);
