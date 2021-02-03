@@ -157,7 +157,7 @@ public final class ThePit extends JavaPlugin {
 
     public void registerEvents() {
         if (getConfig().getInt("Language") == 1) {
-            cs.sendMessage("§fThe Pit §e> §aЗагрузка Эвентов..dd.");
+            cs.sendMessage("§fThe Pit §e> §aЗагрузка Эвентов...");
         } else if (getConfig().getInt("Language") == 2) {
             cs.sendMessage("§fThe Pit §e> §aLoading Events...");
         }
@@ -175,7 +175,7 @@ public final class ThePit extends JavaPlugin {
     public void onDisable() {
         Saver.saveAll();
         if (getConfig().getInt("Language") == 1) {
-            cs.sendMessage("§fThe Pit §e> §cПлагин был успешно выключен!");
+            cs.sendMessage("§fThe Pit §e> §cПлагин был успешно выключенff!");
         } else {
             cs.sendMessage("§fThe Pit §e> §cPlugin was successfully disabled!");
         }
