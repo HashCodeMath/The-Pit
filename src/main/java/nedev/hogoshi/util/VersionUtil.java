@@ -38,12 +38,12 @@ public class VersionUtil {
                     ThePit.getInstance().getServer().getConsoleSender().sendMessage("§fThe Pit §e> §cОшибка: Вы используете устаревшую версию плагина! Ваша версия: §e" + Settings.versionstring + "§c, Требуемая версия: §e" + version);
                     ThePit.getInstance().getServer().getConsoleSender().sendMessage("§fThe Pit §e> §cМы заботимся о наших игроках и пользователях, поэтому что бы вы были заинтересованы в обновлении, мы отключили плагин!");
                     ThePit.getInstance().getServer().getConsoleSender().sendMessage("§fThe Pit §e> §cСкачать последнюю версию плагина можно здесь:");
-                    ThePit.getInstance().getServer().getConsoleSender().sendMessage("§fThe Pit §e> §ehttps://www.spigotmc.org/resources/protocolreporter.87958/");
+                    ThePit.getInstance().getServer().getConsoleSender().sendMessage("§fThe Pit §e> §ehttps://www.spigotmc.org/resources/soon/");
                 } else if (ThePit.getInstance().getConfig().getInt("Language") == 2) {
                     ThePit.getInstance().getServer().getConsoleSender().sendMessage("§fThe Pit §e> §cError: You are using an outdated plugin version! Your current version: §e" + Settings.versionstring + "§c, Latest version: §e" + version);
                     ThePit.getInstance().getServer().getConsoleSender().sendMessage("§fThe Pit §e> §cWe are love our users and we love they, because it, we disabled plugin!");
                     ThePit.getInstance().getServer().getConsoleSender().sendMessage("§fThe Pit §e> §cDownload latest version here:");
-                    ThePit.getInstance().getServer().getConsoleSender().sendMessage("§fThe Pit §e> §ehttps://www.spigotmc.org/resources/protocolreporter.87958/");
+                    ThePit.getInstance().getServer().getConsoleSender().sendMessage("§fThe Pit §e> §ehttps://www.spigotmc.org/resources/soon/");
                 } else {
                     ThePit.getInstance().getServer().getConsoleSender().sendMessage("§fThe Pit §e> §cPlease the set language in configuration!");
                 }
