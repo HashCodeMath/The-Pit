@@ -1,2 +1,1 @@
-
-Hello
+permalink: /main.html
