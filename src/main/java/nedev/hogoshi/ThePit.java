@@ -133,7 +133,7 @@ public final class ThePit extends JavaPlugin {
             }
             if(!items.contains("RU.ItemsShop.DiamondBoots")) {
                 items.set("RU.ItemsShop.DiamondBoots.Name", "&cАлмазные ботинки");
-                items.setStrings("RU.ItemsShop.DiamondBoots.Lores", "&e", "&fСтоимость: &c100 &fзолота", "&7", "&aНажмите, чтобы купить!");
+                items.setStrings("RU.ItemsShop.DiamondBoots.Lores", "&e", "&fСтоимость: &c99 &fзолота", "&7", "&aНажмите, чтобы купить!");
             }
         } catch (Exception e) {
             e.printStackTrace();
