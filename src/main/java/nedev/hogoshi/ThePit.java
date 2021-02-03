@@ -133,8 +133,22 @@ public final class ThePit extends JavaPlugin {
             }
             if(!items.contains("RU.ItemsShop.DiamondBoots")) {
                 items.set("RU.ItemsShop.DiamondBoots.Name", "&cАлмазные ботинки");
-                items.setStrings("RU.ItemsShop.DiamondBoots.Lores", "&e", "&fСтоимость: &c99 &fзолота", "&7", "&aНажмите, чтобы купить!");
+                items.setStrings("RU.ItemsShop.DiamondBoots.Lores", "&e", "&fСтоимость: &c100 &fзолота", "&7", "&aНажмите, чтобы купить!");
             }
+
+            if(!items.contains("EN.ItemsShop.DiamondSword")) {
+                items.set("EN.ItemsShop.DiamondSword.Name", "&cDiamond sword");
+                items.setStrings("EN.ItemsShop.DiamondSword.Lores", "&e", "&fCost: &c150 &fgold", "&7", "&aClick to buy!");
+            }
+            if(!items.contains("EN.ItemsShop.DiamondChestplate")) {
+                items.set("EN.ItemsShop.DiamondChestplate.Name", "&cDiamond chestplate");
+                items.setStrings("EN.ItemsShop.DiamondChestplate.Lores", "&e", "&fCost: &c250 &fgold", "&7", "&aClick to buy!");
+            }
+            if(!items.contains("EN.ItemsShop.DiamondBoots")) {
+                items.set("EN.ItemsShop.DiamondBoots.Name", "&cDiamond boots");
+                items.setStrings("EN.ItemsShop.DiamondBoots.Lores", "&e", "&fCost: &c100 &fgold", "&7", "&aClick to buy!");
+            }
+
         } catch (Exception e) {
             e.printStackTrace();
         }

@@ -5,6 +5,7 @@ import fr.minuskube.inv.SmartInventory;
 import fr.minuskube.inv.content.InventoryContents;
 import fr.minuskube.inv.content.InventoryProvider;
 import lombok.val;
+import nedev.hogoshi.ThePit;
 import nedev.hogoshi.listener.ListenerHelper;
 import nedev.hogoshi.mysql.LoadedUser;
 import org.bukkit.Material;
@@ -34,14 +35,10 @@ public class ItemShopEN implements InventoryProvider {
         ItemStack dsword = new ItemStack(Material.DIAMOND_SWORD);
         ItemMeta dsmeta = dsword.getItemMeta();
 
-        List<String> dslores = new ArrayList<>();
+        List<String> dslores = ThePit.items.getStringList("EN.ItemsShop.DiamondSword.Lores");
 
-        dslores.add("§e");
-        dslores.add("§fCost: §c150 §fgold");
-        dslores.add("§7");
-        dslores.add("§aClick to buy it!");
+        dsmeta.setDisplayName(ThePit.items.getString("EN.ItemsShop.DiamondSword.Name"));
 
-        dsmeta.setDisplayName("§cDiamond sword");
         dsmeta.setLore(dslores);
 
         dsmeta.addItemFlags(ItemFlag.HIDE_ATTRIBUTES);
@@ -77,14 +74,9 @@ public class ItemShopEN implements InventoryProvider {
         ItemStack dchest = new ItemStack(Material.DIAMOND_CHESTPLATE);
         ItemMeta dcmeta = dchest.getItemMeta();
 
-        List<String> dclores = new ArrayList<>();
+        List<String> dclores = ThePit.items.getStringList("EN.ItemsShop.DiamondChestplate.Lores");
 
-        dclores.add("§e");
-        dclores.add("§fCost: §c250 §fgold");
-        dclores.add("§7");
-        dclores.add("§aClick to buy it!");
-
-        dcmeta.setDisplayName("§cDiamond Chestplate");
+        dcmeta.setDisplayName(ThePit.items.getString("EN.ItemsShop.DiamondChestplate.Name"));
         dcmeta.setLore(dclores);
 
         dcmeta.addItemFlags(ItemFlag.HIDE_ATTRIBUTES);
@@ -124,14 +116,9 @@ public class ItemShopEN implements InventoryProvider {
         ItemStack dboots = new ItemStack(Material.DIAMOND_BOOTS);
         ItemMeta dbmeta = dchest.getItemMeta();
 
-        List<String> dblores = new ArrayList<>();
+        List<String> dblores = ThePit.items.getStringList("EN.ItemsShop.DiamondBoots.Lores");
 
-        dblores.add("§e");
-        dblores.add("§fCost: §c100 §fgold");
-        dblores.add("§7");
-        dblores.add("§aClick to buy it!");
-
-        dbmeta.setDisplayName("§cDiamond Boots");
+        dbmeta.setDisplayName(ThePit.items.getString("EN.ItemsShop.DiamondBoots.Name"));
         dbmeta.setLore(dblores);
 
         dbmeta.addItemFlags(ItemFlag.HIDE_ATTRIBUTES);
