@@ -30,10 +30,6 @@ public final class ThePit extends JavaPlugin {
         setInstance(this);
         File config = new File(getDataFolder() + File.separator + "config.yml");
 
-        cs.sendMessage("§fThe Pit §e> §aMade in Russia by §e" + Settings.author);
-        cs.sendMessage("§fThe Pit §e> §aMade in Russia by §e" + Settings.author);
-        cs.sendMessage("§fThe Pit §e> §aMade in Russia by §e" + Settings.author);
-
         if (!config.exists()) {
             getConfig().options().copyDefaults(true);
             saveDefaultConfig();
