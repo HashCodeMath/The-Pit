@@ -21,7 +21,7 @@ public final class ThePit extends JavaPlugin {
     public static FileUtil messages = new FileUtil("messages", "plugins/ThePit/");
     public static FileUtil items = new FileUtil("items", "plugins/ThePit/menus/");
 
-    CommandSender cs = Bukkit.getServer().getConsoleSender();
+    public static CommandSender cs = Bukkit.getServer().getConsoleSender();
     public MySQL SQL = new MySQL();
 
     @SneakyThrows
@@ -44,114 +44,7 @@ public final class ThePit extends JavaPlugin {
             }
         }
 
-        try {
-            messages.addDefault("Prefix", "&fThe Pit &e> &r");
-            messages.addDefault("Sender", "&e<sender>");
-            messages.addDefault("Russian.Commands.AddExpCommandUsage", "&cПожалуйста, укажите аргументы! Используйте: &e/addexp <Игрок> <Опыт>");
-            messages.addDefault("Russian.Commands.AddedExp", "&aВам было добавлено &e<exp> &aопыта!");
-            messages.addDefault("Russian.Commands.SetExpCommandUsage", "&cПожалуйста, укажите аргументы! Используйте: &e/setexp <Игрок> <Опыт>");
-            messages.addDefault("Russian.Commands.SetedExp", "&aВам было установлено &e<exp> &aопыта!");
-            messages.addDefault("Russian.Commands.AddGoldCommandUsage", "&cПожалуйста, укажите аргументы! Используйте: &e/addgold <Игрок> <Золото>");
-            messages.addDefault("Russian.Commands.AddedGold", "&aВам было добавлено &e<gold> &aзолота!");
-            messages.addDefault("Russian.Commands.SetGoldCommandUsage", "&cПожалуйста, укажите аргументы! Используйте: &e/setgold <Игрок> <Золото>");
-            messages.addDefault("Russian.Commands.SetedGold", "&aВам было установлено &e<gold> &aзолота!");
-            messages.addDefault("Russian.Commands.AddLevelCommandUsage", "&cПожалуйста, укажите аргументы! Используйте: &e/addlevel <Игрок> <Уровень>");
-            messages.addDefault("Russian.Commands.AddedLevel", "&aВам было добавлено &e<level> &aуровней!");
-            messages.addDefault("Russian.Commands.SetLevelCommandUsage", "&cПожалуйста, укажите аргументы! Используйте: &e/setlevel <Игрок> <Уровень>");
-            messages.addDefault("Russian.Commands.SetedLevel", "&aВам было установлено &e<level> &aуровней!");
-            messages.addDefault("Russian.Commands.SetPrestigeCommandUsage", "&cПожалуйста, укажите аргументы! Используйте: &e/setprestige <Игрок> <Престиж>");
-            messages.addDefault("Russian.Commands.SetedPrestige", "&aВам было установлен &e<prestige> &aпрестиж!");
-            messages.addDefault("Russian.Commands.UseNumber", "&cПожалуйста, укажите число!");
-
-            messages.addDefault("Russian.Commands.GamemodeUsage", "&cИспользование: &e/gamemode <0/1/2/3>");
-            messages.addDefault("English.Commands.Gamemode", "&aВы успешно установили режим &eвыживания&a!");
-            messages.addDefault("English.Commands.GamemodeO", "&aВы успешно установили режим &eкреатива&a!");
-            messages.addDefault("English.Commands.GamemodeT", "&aВы успешно установили режим &eприключений&a!");
-            messages.addDefault("English.Commands.GamemodeS", "&aВы успешно установили режим &eнаблюдателя&a!");
-
-            messages.addDefault("Russian.WelcomeTitleTop", "&aДобро пожаловать!");
-            messages.addDefault("Russian.WelcomeTitleBot", "&7Вы успешно зашли на сервер!");
-            messages.addDefault("Russian.Kill", "&aУбийство! &7Вы убили игрока &a<target>&7 (&6+7 Золота&7, &b+23 Опыта&7)!");
-            messages.addDefault("Russian.DeadTitleTop", "&cВы умерли!");
-            messages.addDefault("Russian.DeadTitleBot", "&7Вы были убиты игроком &c<killer>&7!");
-            messages.addDefault("Russian.DeadMsg", "&cСмерть! &7Вы были убиты игроком &c<killer>&7!");
-            messages.addDefault("Russian.VerifyMessage", "&cПожалуйста, введите код: &e<code>&c!");
-            messages.addDefault("Russian.NewVerifyCode", "&cНеверный код! Сгенерирован новый код: &e<code>");
-            messages.addDefault("Russian.Verified", "&aВы успешно прошли капчу!");
-            messages.addDefault("Russian.NoPerms", "&cУ вас недостаточно прав!");
-
-            messages.addDefault("English.Commands.AddExpCommandUsage", "&cPlease specify arguments! Usage: &e/addexp <Player> <Exp>");
-            messages.addDefault("English.Commands.AddedExp", "&aYou have been added &e<exp> &aexperience!");
-            messages.addDefault("English.Commands.SetExpCommandUsage", "&cPlease specify arguments! Usage: &e/setexp <Player> <Exp>");
-            messages.addDefault("English.Commands.SetedExp", "&aYou have been set &e<exp> &aexperience!");
-            messages.addDefault("English.Commands.AddGoldCommandUsage", "&cPlease specify arguments! Usage: &e/addgold <Player> <Gold>");
-            messages.addDefault("English.Commands.AddedGold", "&aYou have been added &e<gold> &agold!");
-            messages.addDefault("English.Commands.SetGoldCommandUsage", "&cPlease specify arguments! Usage: &e/setgold <Player> <Gold>");
-            messages.addDefault("English.Commands.SetedGold", "&aYou have been set &e<gold> &agold!");
-            messages.addDefault("English.Commands.AddLevelCommandUsage", "&cPlease specify arguments! Usage: &e/addlevel <Player> <Level>");
-            messages.addDefault("English.Commands.AddedLevel", "&aYou have been added &e<level> &alevels!");
-            messages.addDefault("English.Commands.SetLevelCommandUsage", "&cPlease specify arguments! Usage: &e/setlevel <Player> <Level>");
-            messages.addDefault("English.Commands.SetedLevel", "&aYou have been set &e<level> &alevel!");
-            messages.addDefault("English.Commands.SetPrestigeCommandUsage", "&cPlease specify arguments! Usage: &e/setprestige <Player> <Prestige>");
-            messages.addDefault("English.Commands.SetedPrestige", "&aYou have been set &e<prestige> &aprestiges!");
-            messages.addDefault("English.Commands.AddPrestigeCommandUsage", "&cPlease specify arguments! Usage: &e/addprestige <Player> <Prestige>");
-            messages.addDefault("English.Commands.AddedPrestige", "&aYou have been added &e<prestige> &aprestiges!");
-            messages.addDefault("English.Commands.UseNumber", "&cPlease, specify number!");
-
-            messages.addDefault("English.Commands.GamemodeUsage", "&cUsage: &e/gamemode <0/1/2/3>");
-            messages.addDefault("English.Commands.Gamemode", "&aYou successfully set gamemode to &esurvival&a!");
-            messages.addDefault("English.Commands.GamemodeO", "&aYou successfully set gamemode to &ecreative&a!");
-            messages.addDefault("English.Commands.GamemodeT", "&aYou successfully set gamemode to &eadventure&a!");
-            messages.addDefault("English.Commands.GamemodeS", "&aYou successfully set gamemode to &espectator&a!");
-
-            messages.addDefault("English.WelcomeTitleTop", "&aWelcome!");
-            messages.addDefault("English.WelcomeTitleBot", "&7You joined to the server!");
-            messages.addDefault("English.Kill", "&aKill! &7You killed &a<target>&7 (&6+7 Gold&7, &b+23 XP&7)!");
-            messages.addDefault("English.DeadTitleTop", "&cYou died!");
-            messages.addDefault("English.DeadTitleBot", "&7You was killed by &c<killer>&7!");
-            messages.addDefault("English.DeadMsg", "&cDie! &7You was killed by &c<killer>&7!");
-            messages.addDefault("English.VerifyMessage", "&cPlease, write the code: &e<code>&c!");
-            messages.addDefault("English.NewVerifyCode", "&cInvalid code! Generated new code: &e<code>");
-            messages.addDefault("English.Verified", "&aYou was verified!");
-            messages.addDefault("English.NoPerms", "&cYou don't have permissions!");
-
-            messages.copyDefaults(true);
-            messages.save();
-            if (getConfig().getInt("Language") == 1) {
-                cs.sendMessage("§fThe Pit §e> §aСоздание сообщений...");
-            } else {
-                cs.sendMessage("§fThe Pit §e> §aCreating messages...");
-            }
-
-            if(!items.contains("RU.ItemsShop.DiamondSword")) {
-                items.set("RU.ItemsShop.DiamondSword.Name", "&cАлмазный меч");
-                items.setStrings("RU.ItemsShop.DiamondSword.Lores", "&e", "&fСтоимость: &c150 &fзолота", "&7", "&aНажмите, чтобы купить!");
-            }
-            if(!items.contains("RU.ItemsShop.DiamondChestplate")) {
-                items.set("RU.ItemsShop.DiamondChestplate.Name", "&cАлмазный нагрудник");
-                items.setStrings("RU.ItemsShop.DiamondChestplate.Lores", "&e", "&fСтоимость: &c250 &fзолота", "&7", "&aНажмите, чтобы купить!");
-            }
-            if(!items.contains("RU.ItemsShop.DiamondBoots")) {
-                items.set("RU.ItemsShop.DiamondBoots.Name", "&cАлмазные ботинки");
-                items.setStrings("RU.ItemsShop.DiamondBoots.Lores", "&e", "&fСтоимость: &c100 &fзолота", "&7", "&aНажмите, чтобы купить!");
-            }
-
-            if(!items.contains("EN.ItemsShop.DiamondSword")) {
-                items.set("EN.ItemsShop.DiamondSword.Name", "&cDiamond sword");
-                items.setStrings("EN.ItemsShop.DiamondSword.Lores", "&e", "&fCost: &c150 &fgold", "&7", "&aClick to buy!");
-            }
-            if(!items.contains("EN.ItemsShop.DiamondChestplate")) {
-                items.set("EN.ItemsShop.DiamondChestplate.Name", "&cDiamond chestplate");
-                items.setStrings("EN.ItemsShop.DiamondChestplate.Lores", "&e", "&fCost: &c250 &fgold", "&7", "&aClick to buy!");
-            }
-            if(!items.contains("EN.ItemsShop.DiamondBoots")) {
-                items.set("EN.ItemsShop.DiamondBoots.Name", "&cDiamond boots");
-                items.setStrings("EN.ItemsShop.DiamondBoots.Lores", "&e", "&fCost: &c100 &fgold", "&7", "&aClick to buy!");
-            }
-
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
+        SetupUtil.setupConfig();
 
         VersionUtil.versionChecker();
         try {

@@ -55,7 +55,7 @@ public class ItemShopEN implements InventoryProvider {
 
                         ItemStack sword = new ItemStack(Material.DIAMOND_SWORD);
                         ItemMeta meta = sword.getItemMeta();
-                        meta.setDisplayName("§cDiamond Sword");
+                        meta.setDisplayName(ThePit.items.getString("EN.ItemsShop.DiamondSword.Name"));
                         meta.addItemFlags(ItemFlag.HIDE_ATTRIBUTES);
                         sword.setItemMeta(meta);
 
@@ -92,7 +92,7 @@ public class ItemShopEN implements InventoryProvider {
                         ListenerHelper.setupscoreboard(player);
                         ItemStack chest = new ItemStack(Material.DIAMOND_CHESTPLATE);
                         ItemMeta meta = chest.getItemMeta();
-                        meta.setDisplayName("§cDiamond Chestplate");
+                        meta.setDisplayName(ThePit.items.getString("EN.ItemsShop.DiamondChestplate.Name"));
                         meta.addItemFlags(ItemFlag.HIDE_ATTRIBUTES);
                         chest.setItemMeta(meta);
                         if(player.getInventory().contains(Material.IRON_CHESTPLATE)) {
@@ -134,7 +134,7 @@ public class ItemShopEN implements InventoryProvider {
                         ListenerHelper.setupscoreboard(player);
                         ItemStack boots = new ItemStack(Material.DIAMOND_BOOTS);
                         ItemMeta meta = boots.getItemMeta();
-                        meta.setDisplayName("§cDiamond Boots");
+                        meta.setDisplayName(ThePit.items.getString("EN.ItemsShop.DiamondBoots.Name"));
                         meta.addItemFlags(ItemFlag.HIDE_ATTRIBUTES);
                         boots.setItemMeta(meta);
                         if(player.getInventory().contains(Material.IRON_BOOTS)) {

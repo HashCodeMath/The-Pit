@@ -47,13 +47,13 @@ public class ItemShopRU implements InventoryProvider {
                 e -> {
                     val loadedUser = LoadedUser.USER_CACHE.getUnchecked(player.getUniqueId());
                     if (loadedUser.getCoins() >= 150) {
-                        player.sendMessage("§fThe Pit §e> §aВы успешно купили §eАлмазный меч§a!");
+                        player.sendMessage(ThePit.messages.getString("Russian.ItemsShop.Buyed").replaceAll("<item>", "Diamond Sword"));
                         loadedUser.setCoins(loadedUser.getCoins() - 150);
                         ListenerHelper.setupscoreboard(player);
 
                         ItemStack sword = new ItemStack(Material.DIAMOND_SWORD);
                         ItemMeta meta = sword.getItemMeta();
-                        meta.setDisplayName("§cАлмазный меч");
+                        meta.setDisplayName(ThePit.items.getString("RU.ItemsShop.DiamondSword.Name"));
                         meta.addItemFlags(ItemFlag.HIDE_ATTRIBUTES);
                         sword.setItemMeta(meta);
 
@@ -63,7 +63,7 @@ public class ItemShopRU implements InventoryProvider {
                             player.getInventory().addItem(sword);
                         }
                     } else {
-                        player.sendMessage("§fThe Pit §e> §cУ вас недостаточно золота!");
+                        player.sendMessage(ThePit.messages.getString("Russian.ItemsShop.HaventGold"));
                     }
                 }));
 
@@ -85,12 +85,12 @@ public class ItemShopRU implements InventoryProvider {
                 e -> {
                     val loadedUser = LoadedUser.USER_CACHE.getUnchecked(player.getUniqueId());
                     if (loadedUser.getCoins() >= 250) {
-                        player.sendMessage("§fThe Pit §e> §aВы успешно купили §eАлмазный нагрудник§a!");
+                        player.sendMessage(ThePit.messages.getString("Russian.ItemsShop.Buyed").replaceAll("<item>", "Diamond Chestplate"));
                         loadedUser.setCoins(loadedUser.getCoins() - 250);
                         ListenerHelper.setupscoreboard(player);
                         ItemStack chest = new ItemStack(Material.DIAMOND_CHESTPLATE);
                         ItemMeta meta = chest.getItemMeta();
-                        meta.setDisplayName("§cАлмазный нагрудник");
+                        meta.setDisplayName(ThePit.items.getString("RU.ItemsShop.DiamondChestplate.Name"));
                         meta.addItemFlags(ItemFlag.HIDE_ATTRIBUTES);
                         chest.setItemMeta(meta);
                         if(player.getInventory().contains(Material.IRON_CHESTPLATE)) {
@@ -105,7 +105,7 @@ public class ItemShopRU implements InventoryProvider {
                             player.getInventory().addItem(chest);
                         }
                     } else {
-                        player.sendMessage("§fThe Pit §e> §cУ вас недостаточно золота!");
+                        player.sendMessage(ThePit.messages.getString("Russian.ItemsShop.HaventGold"));
                     }
                 }));
 
@@ -127,12 +127,12 @@ public class ItemShopRU implements InventoryProvider {
                 e -> {
                     val loadedUser = LoadedUser.USER_CACHE.getUnchecked(player.getUniqueId());
                     if (loadedUser.getCoins() >= 100) {
-                        player.sendMessage("§fThe Pit §e> §aВы успешно купили §eАлмазные ботинки§a!");
+                        player.sendMessage(ThePit.messages.getString("Russian.ItemsShop.Buyed").replaceAll("<item>", "Diamond Boots"));
                         loadedUser.setCoins(loadedUser.getCoins() - 100);
                         ListenerHelper.setupscoreboard(player);
                         ItemStack boots = new ItemStack(Material.DIAMOND_BOOTS);
                         ItemMeta meta = boots.getItemMeta();
-                        meta.setDisplayName("§cАлмазные ботинки");
+                        meta.setDisplayName(ThePit.items.getString("RU.ItemsShop.DiamondBoots.Name"));
                         meta.addItemFlags(ItemFlag.HIDE_ATTRIBUTES);
                         boots.setItemMeta(meta);
                         if(player.getInventory().contains(Material.IRON_BOOTS)) {
@@ -148,7 +148,7 @@ public class ItemShopRU implements InventoryProvider {
                         }
 
                     } else {
-                        player.sendMessage("§fThe Pit §e> §cУ вас недостаточно золота!");
+                        player.sendMessage(ThePit.messages.getString("Russian.ItemsShop.HaventGold"));
                     }
                 }));
     }
